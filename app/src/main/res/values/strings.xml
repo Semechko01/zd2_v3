@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="text1">Мониторинг здоровья</string>
+    <string name="text2">Логин</string>
+    <string name="text3">Пароль</string>
+    <string name="text4">Войти</string>
+    <string name="text5">Дневник</string>
+    <string name="text6">Запись</string>
+    <string name="text7">Профиль</string>
+    <string name="text8">ID записи</string>
+    <string name="text9">Найти</string>
+    <string name="text10">Время</string>
+    <string name="text11">Температура</string>
+    <string name="text12">Давление</string>
+    <string name="text13">Save</string>
+    <string name="text14">Delete</string>
+    <string name="text15">Create</string>
+    <string name="text16">Выйти</string>
+</resources>
