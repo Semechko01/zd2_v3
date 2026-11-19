@@ -39,19 +39,25 @@ class Zapisvdnevnik : AppCompatActivity() {
         idsearch = findViewById(R.id.idsearch)
         dao = DataBase.getInstance(this).medic_Helper()
 
-        createbutton.setOnClickListener{
-            if(timeedittext.text.toString().length == 0 || tempedittext.text.toString().length == 0 || davedittext.text.toString().length == 0)
+         createbutton.setOnClickListener{
+            if(tempedittext.text.toString().length == 0 || davedittext.text.toString().length == 0)
             {
                 showAlert("Пустые строки","Ошибка")
                 return@setOnClickListener
             }
+            var text1 = LocalDateTime.now().toString();
+            var text2 = tempedittext.text.toString().toDouble();
+            var text3 = davedittext.text.toString().toDouble();
             lifecycleScope.launch {
                 withContext(Dispatchers.IO)
                 {
-                    dao.insert(Medic(time = timeedittext.text.toString(), temp = tempedittext.text.toString().toDouble(), dav = davedittext.text.toString().toDouble()))
+                    dao.insert(Medic(time = text1, temp = text2, dav = text3))
                 }
             }
             showAlert("Запись в дневник успешно создана", "Выполнено")
+            timeedittext.setText("")
+            tempedittext.setText("")
+            davedittext.setText("")
 
         }
         searchbutton.setOnClickListener{
